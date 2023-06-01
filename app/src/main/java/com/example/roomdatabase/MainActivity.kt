@@ -32,8 +32,6 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         binding?.rvRecords?.layoutManager =
             StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-
-
         viewModel?.getNotesData(this)
         observer()
         clickListener()
