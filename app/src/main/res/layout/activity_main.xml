@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,46 +15,89 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+
             <EditText
                 android:id="@+id/ed_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:hint="Search"
                 android:drawableLeft="@drawable/ic_search"
-                />
+                android:hint="Search" />
 
             <ImageView
                 android:id="@+id/search_cancle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_cancel"
-                android:padding="@dimen/_5sdp"
-                android:visibility="gone"
                 android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_5sdp"/>
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_cancel"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/rvDelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/all_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:button="@drawable/checkbox_round"
+                    android:padding="@dimen/_5sdp" />
+
+                <TextView
+                    android:id="@+id/tv_select_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/all_check"
+                    android:text="1 Selected"
+
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp" />
+
+                <Button
+                    android:id="@+id/delete_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:text="Done"
+
+                    />
+
+
+            </RelativeLayout>
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvRecords"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/item_view"
                 android:layout_below="@+id/ed_search"
+                tools:listitem="@layout/item_view"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fabAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/add"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-
                 android:layout_marginEnd="@dimen/_20sdp"
-                android:layout_marginBottom="@dimen/_30sdp" />
 
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:src="@drawable/add" />
 
 
         </RelativeLayout>

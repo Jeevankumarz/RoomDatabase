@@ -26,5 +26,10 @@ class MainViewModel : ViewModel() {
 
     }
 
+    //Delete Notes
+    fun deleteNotes(context: Context, deleteList: ArrayList<NotesData>){
+        val notesDb = NotesDatabase.getDatabase(context)
+        notesDb.notesDao().deletenotes(deleteList)
+    }
 
 }

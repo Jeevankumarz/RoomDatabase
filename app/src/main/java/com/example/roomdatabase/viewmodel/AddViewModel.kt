@@ -13,4 +13,11 @@ class AddViewModel: ViewModel()  {
         notesDb.notesDao().insertNotes(notesData)
 
     }
+
+    fun updateData(context: Context, notesData: NotesData) {
+        val notesDb = NotesDatabase.getDatabase(context)
+
+        notesDb.notesDao().updateNotes(notesData)
+
+    }
 }
